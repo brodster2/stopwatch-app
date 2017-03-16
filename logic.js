@@ -12,6 +12,11 @@ $(function(){
     //On App load show start and lap buttons
     hideShowButtons("#startButton", "#lapButton");
     //click on startButton
+    $('#startButton').click(function(){
+        mode = 1;
+        hideShowButtons("#stopButton", "#lapButton");
+        startAction();
+    });
         //mode on
         //show stop and lap buttons
         //start counter
@@ -37,9 +42,36 @@ $(function(){
             //start timer
     
     //functions
+    /**
+    * First hides all buttons then displays two required buttons
+    **/
     function hideShowButtons(btnId1, btnId2){
         $('.control').hide();
         $(btnId1).show();
         $(btnId2).show();
+    }
+    
+    /**
+    * Starts interval and increases lap/time counters
+    **/
+    function startAction(){
+        action = setInterval(function(){
+            timeCounter++;
+            lapCounter++;
+            updateTime();
+        }, 10);
+    }
+    
+    /**
+    * Divide lap/time counters to produce min,sec,centisec elapsed.
+    **/
+    function updateTime(){
+        timeMinutes = Math.floor(timeCounter/6000);
+        timeSeconds = Math.floor((timeCounter%6000)/100);
+        timeCentiseconds = Math.floor(timeCounter%6000)%100;
+        
+        lapMinutes = Math.floor(lapCounter/6000);
+        lapSeconds = Math.floor((lapCounter%6000)/100);
+        lapCentiseconds = Math.floor(lapCounter%6000)%100;
     }
 });
