@@ -33,8 +33,8 @@ body{
     height: 8vw;
     width: 15vw;
     text-align: center;
-    padding: 20% 0;
-    font-size: 2vw;
+    padding: 16% 0;
+    font-size: 2.5vw;
     cursor: pointer;
 }
 
@@ -45,6 +45,22 @@ body{
 
 /*Laps*/
 #laps{
-    max-height: 200px;
+    max-height: 45vw;
     overflow-y: scroll;
+}
+
+.lap{
+    height: 4vw;
+    border-bottom: 0.2vw solid white;
+    margin: 15px;
+    font-size: 3vw
+}
+
+.laptitle{
+    float: left;
+}
+
+.laptime{
+    float: right;
+    margin-right: 2%
 }
