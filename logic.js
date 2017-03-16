@@ -30,9 +30,13 @@ $(function(){
     });
         
     //click on resumeButton
+    $('#resumeButton').click(function(){
         //show stop and lap buttons
+        hideShowButtons('#stopButton', '#lapButton');
         //resume counter
-    
+        startAction();
+    });
+        
     //click on resetButton
         //reload the page
     $('#resetButton').click(function(){
@@ -40,7 +44,13 @@ $(function(){
     });
     
     //click on lapButton
+    $('#lapButton').click(function(){
         //if mode is on
+        if(mode){
+            
+        }
+    });
+        
             //stop timer
             //resetLap and print lap details
             //start timer
@@ -61,7 +71,13 @@ $(function(){
     function startAction(){
         action = setInterval(function(){
             timeCounter++;
+            if(timeCounter = 100*60*100){
+                timeCounter = 0;
+            }
             lapCounter++;
+            if(lapCounter = 100*60*100){
+                lapCounter = 0;
+            }
             updateTime();
         }, 10);
     }
