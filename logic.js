@@ -133,5 +133,6 @@ $(function(){
                 '</div>'+
             '</div>';
         $(lapDetails).appendTo('#laps');
+        $("#laps").scrollTop($("#laps")[0].scrollHeight);
     }
 });
