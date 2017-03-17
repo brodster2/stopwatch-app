@@ -1,1 +1,1 @@
-Stopwatch App
+Simple stopwatch web app using javascript.
