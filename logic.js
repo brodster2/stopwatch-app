@@ -117,7 +117,7 @@ $(function(){
     }
     
     /**
-    * Print the lap time to the laps container
+    * Print the lap time to the laps container at bottom of page
     **/
     function addLap(){
         lapNumber++
@@ -132,7 +132,7 @@ $(function(){
                     '<span>' + format(lapCentiseconds) + '</span>'+
                 '</div>'+
             '</div>';
-        $(lapDetails).appendTo('#laps');
-        $("#laps").scrollTop($("#laps")[0].scrollHeight);
+        $(lapDetails).prependTo('#laps');
+        //$("#laps").scrollTop($("#laps")[0].scrollHeight);
     }
 });
